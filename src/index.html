@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery</title>
+		<!-- fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- css files -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="sidebar-active">
+		<!-- ========================================== -->
+		<!-- =============== sidebar ================== -->
+		<!-- ========================================== -->
+		<div class="sidebar-overlay sidebar__toggler">&nbsp;</div>
+		<button class="btn btn__icon sidebar__toggle-icon sidebar__toggler">
+			<svg class="close-icon">
+				<use xlink:href="./img/icons.svg#icon-nav-icon"></use>
+			</svg>
+			<svg class="open-icon">
+				<use xlink:href="./img/icons.svg#icon-open-sidebar"></use>
+			</svg>
+		</button>
+		<aside class="sidebar">
+			<div class="sidebar__header">
+				<button class="btn btn__icon edit__btn">Edit</button>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading sidebar__menu-heading--photos">Photos</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--photos">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-library"></use>
+							</svg>
+							Library
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Utilities
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--utilities sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-imports"></use>
+							</svg>
+							Imports
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Media Types
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--media sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-videos"></use>
+							</svg>
+							Videos
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+		<main class="content">
+			<div class="container-fluid">
+				<div class="row homepage__content">
+					<!-- ========================================== -->
+					<!-- Note: card and columns markup coming from JavaSCript file -->
+					<!-- ========================================== -->
+					<div class="col-md-4 col-sm-6">
+						<figure class="card year__card">
+							<!-- <img src="https://picsum.photos/250/300" alt="year card" class="card__img" /> -->
+							<figcaption class="caption">2016</figcaption>
+						</figure>
+					</div>
+				</div>
+			</div>
+
+			<!-- ============================================== -->
+			<!-- ============= Filter Component =============== -->
+			<!-- ============================================== -->
+			<div class="filter__container">
+				<button class="btn active btn__secondary">Years</button>
+				<button class="btn btn__secondary">Months</button>
+				<button class="btn btn__secondary">Days</button>
+				<button class="btn btn__secondary">All Photos</button>
+			</div>
+		</main>
+
+		<!-- Main js file -->
+		<script src="js/main.js"></script>
+	</body>
+</html>

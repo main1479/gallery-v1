@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery</title>
+		<!-- fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- css files -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="sidebar-active">
+		<!-- ========================================== -->
+		<!-- =============== sidebar ================== -->
+		<!-- ========================================== -->
+		<div class="sidebar-overlay sidebar__toggler">&nbsp;</div>
+		<button class="btn btn__icon sidebar__toggle-icon sidebar__toggler">
+			<svg class="close-icon">
+				<use xlink:href="./img/icons.svg#icon-nav-icon"></use>
+			</svg>
+			<svg class="open-icon">
+				<use xlink:href="./img/icons.svg#icon-open-sidebar"></use>
+			</svg>
+		</button>
+		<aside class="sidebar">
+			<div class="sidebar__header">
+				<button class="btn btn__icon edit__btn">Edit</button>
+			</div>
+			<div class="sidebar__menu">
+				<h2 class="heading mb-1">Photos</h2>
+				<ul class="sidebar__menu-list sidebar__menu-list--photos">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-library"></use>
+							</svg>
+							Library
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Utilities
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--utilities sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-imports"></use>
+							</svg>
+							Imports
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Media Types
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--media sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-videos"></use>
+							</svg>
+							Videos
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+
+		<main class="content favourites-page">
+			<div class="container-fluid">
+				<div class="page__header">
+					<h3 class="heading">Favourites</h3>
+					<button class="btn btn__icon dot__menu">
+						<svg>
+							<use xlink:href="./img/icons.svg#icon-three-dot-hr"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="page__content text-center">
+					<h3 class="heading text__light mb-1">No Photos or Videos</h3>
+					<p class="p__text text__light">
+						You can take photos and videos using the camera, or sync photos and videos onto your
+						iPad using Finder.
+					</p>
+				</div>
+			</div>
+		</main>
+		<!-- Main js file -->
+		<script src="js/favourites.js"></script>
+	</body>
+</html>

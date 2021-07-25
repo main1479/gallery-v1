@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Gallery</title>
+		<!-- fonts -->
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- css files -->
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body class="sidebar-active">
+		<!-- ========================================== -->
+		<!-- =============== sidebar ================== -->
+		<!-- ========================================== -->
+		<div class="sidebar-overlay sidebar__toggler">&nbsp;</div>
+		<button class="btn btn__icon sidebar__toggle-icon sidebar__toggler">
+			<svg class="close-icon">
+				<use xlink:href="./img/icons.svg#icon-nav-icon"></use>
+			</svg>
+			<svg class="open-icon">
+				<use xlink:href="./img/icons.svg#icon-open-sidebar"></use>
+			</svg>
+		</button>
+		<aside class="sidebar">
+			<div class="sidebar__header">
+				<button class="btn btn__icon edit__btn">Edit</button>
+			</div>
+			<div class="sidebar__menu">
+				<h2 class="heading mb-1">Photos</h2>
+				<ul class="sidebar__menu-list sidebar__menu-list--photos">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-library"></use>
+							</svg>
+							Library
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Utilities
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--utilities sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-imports"></use>
+							</svg>
+							Imports
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sidebar__menu">
+				<h4 class="heading sidebar__menu-heading dropdown__trigger">
+					Media Types
+					<svg>
+						<use xlink:href="./img/icons.svg#icon-chevron-down"></use>
+					</svg>
+				</h4>
+				<ul class="sidebar__menu-list sidebar__menu-list--media sidebar__dropdown active">
+					<li>
+						<a href="#">
+							<svg>
+								<use xlink:href="./img/icons.svg#icon-videos"></use>
+							</svg>
+							Videos
+						</a>
+					</li>
+				</ul>
+			</div>
+		</aside>
+
+		<main class="content for-you-page">
+			<div class="container-fluid">
+				<h2 class="heading">For You</h2>
+				<hr />
+				<h3 class="heading">Sharing Suggestions</h3>
+				<div class="suggestion__card">
+					<button class="btn btn__icon btn__close">
+						<svg>
+							<use xlink:href="./img/icons.svg#icon-close"></use>
+						</svg>
+					</button>
+					<img src="./img/users.png" alt="users" class="card__img img-fluid mb-2" />
+					<p class="p__text mb-1">
+						Get sharing suggestions and easily send photos to anyone you choose using a link. Send
+						back photos to people who share with you.
+					</p>
+					<a href="#" class="link"> Use iCloud Photos... </a>
+				</div>
+			</div>
+		</main>
+		<!-- Main js file -->
+		<script src="js/for-you.js"></script>
+	</body>
+</html>

@@ -1,0 +1,21 @@
+.btn {
+	font-size: 1.6rem;
+	&__icon {
+		color: $color-primary;
+		svg {
+			width: 2.2rem;
+			height: 2rem;
+			fill: currentColor;
+		}
+
+		&:hover {
+			color: $color-text-light;
+		}
+	}
+
+	&__secondary {
+		background: $color-secondary;
+		color: #fff;
+		padding: 1rem 2rem;
+	}
+}

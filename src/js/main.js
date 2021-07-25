@@ -1,0 +1,219 @@
+const photosLinks = [
+	{
+		label: 'Library',
+		icon: './img/icons.svg#icon-library',
+		current: true,
+	},
+	{
+		label: 'For You',
+		icon: './img/icons.svg#icon-for-you',
+	},
+	{
+		label: 'People',
+		icon: './img/icons.svg#icon-people',
+	},
+	{
+		label: 'Places',
+		icon: './img/icons.svg#icon-places',
+	},
+	{
+		label: 'Favourites',
+		icon: './img/icons.svg#icon-favourites',
+	},
+	{
+		label: 'Recents',
+		icon: './img/icons.svg#icon-recents',
+	},
+	{
+		label: 'Search',
+		icon: './img/icons.svg#icon-search',
+	},
+];
+
+const utilitiesLinks = [
+	{
+		label: 'Imports',
+		icon: './img/icons.svg#icon-imports',
+	},
+	{
+		label: 'Recently Deleted',
+		icon: './img/icons.svg#icon-bin',
+	},
+];
+
+const mediaTypesLinks = [
+	{
+		label: 'Videos',
+		icon: './img/icons.svg#icon-videos',
+	},
+	{
+		label: 'Selfies',
+		icon: './img/icons.svg#icon-selfies',
+	},
+	{
+		label: 'Live Photos',
+		icon: './img/icons.svg#icon-live-photos',
+	},
+	{
+		label: 'Slo-mo',
+		icon: './img/icons.svg#icon-slo-mo',
+	},
+	{
+		label: 'Screenshots',
+		icon: './img/icons.svg#icon-screenshots',
+	},
+];
+
+const homepageContent = [
+	{
+		year: 2015,
+	},
+	{
+		year: 2016,
+	},
+	{
+		year: 2017,
+	},
+	{
+		year: 2018,
+	},
+	{
+		year: 2019,
+	},
+	{
+		year: 2020,
+	},
+];
+
+// =========================================
+// photos links markup
+// =========================================
+const initPhotosLinksMarkup = () => {
+	const photosLinksParent = document.querySelector('.sidebar__menu-list--photos');
+	const photosLinksMarkup = photosLinks
+		.map((link) => {
+			return `<li>
+            <a href="#" class="${link.current ? 'active' : 'not-active'}">
+               <svg>
+                  <use xlink:href="${link.icon}"></use>
+               </svg>
+               ${link.label}
+            </a>
+         </li>`;
+		})
+		.join('');
+
+	photosLinksParent.innerHTML = '';
+	photosLinksParent.insertAdjacentHTML('afterbegin', photosLinksMarkup);
+};
+
+// =========================================
+// Utilities links markup
+// =========================================
+const initUtilitiesLinksMarkup = () => {
+	const utilitiesLinksParent = document.querySelector('.sidebar__menu-list--utilities');
+	const utilitiesLinksMarkup = utilitiesLinks
+		.map((link) => {
+			return `<li>
+           <a href="#" class="${link.current ? 'active' : 'not-active'}">
+               <svg>
+                  <use xlink:href="${link.icon}"></use>
+               </svg>
+               ${link.label}
+            </a>
+         </li>`;
+		})
+		.join('');
+
+	utilitiesLinksParent.innerHTML = '';
+	utilitiesLinksParent.insertAdjacentHTML('afterbegin', utilitiesLinksMarkup);
+};
+
+// =========================================
+// MediaTypes links markup
+// =========================================
+const initMediaTypesLinksMarkup = () => {
+	const mediaTypesLinksParent = document.querySelector('.sidebar__menu-list--media');
+	const mediaTypesLinksMarkup = mediaTypesLinks
+		.map((link) => {
+			return `<li>
+			<a href="#" class="${link.current ? 'active' : 'not-active'}">
+				<svg>
+					<use xlink:href="${link.icon}"></use>
+				</svg>
+				${link.label}
+			</a>
+		</li>`;
+		})
+		.join('');
+
+	mediaTypesLinksParent.innerHTML = '';
+	mediaTypesLinksParent.insertAdjacentHTML('afterbegin', mediaTypesLinksMarkup);
+};
+
+// =========================================
+// Homepage content markup
+// =========================================
+const initHomepageContentMarkup = () => {
+	const homepageContentParent = document.querySelector('.homepage__content');
+	const homepageContentMarkup = homepageContent
+		.map((item) => {
+			return `<div class="col-md-4 col-sm-6">
+						<figure class="card year__card">
+							<figcaption class="caption">${item.year}</figcaption>
+						</figure>
+					</div>`;
+		})
+		.join('');
+
+	homepageContentParent.innerHTML = '';
+	homepageContentParent.insertAdjacentHTML('afterbegin', homepageContentMarkup);
+};
+
+const init = () => {
+	initPhotosLinksMarkup();
+	initUtilitiesLinksMarkup();
+	initMediaTypesLinksMarkup();
+	initHomepageContentMarkup();
+};
+
+init();
+
+// =============================================
+// sidebar dropdown
+// =============================================
+
+const dropdownTriggers = document.querySelectorAll('.dropdown__trigger');
+
+dropdownTriggers.forEach((btn) => {
+	btn.addEventListener('click', function () {
+		const dropdownBody = this.nextElementSibling;
+		if (dropdownBody.style.maxHeight) {
+			dropdownBody.style.maxHeight = null;
+			dropdownBody.classList.remove('active');
+		} else {
+			dropdownBody.style.maxHeight = dropdownBody.scrollHeight + 'px';
+			dropdownBody.classList.add('active');
+		}
+	});
+	btn.click();
+});
+
+// ===========================================================
+// sidebar toggle
+// ===========================================================
+
+const sidebarTogglers = document.querySelectorAll('.sidebar__toggler');
+const sidebarIcon = document.querySelectorAll('.sidebar__toggle-icon');
+
+sidebarTogglers.forEach((btn) => {
+	btn.addEventListener('click', function () {
+		document.body.classList.toggle('sidebar-active');
+	});
+});
+
+window.addEventListener('load', function () {
+	if (window.screen.availWidth <= 1024) {
+		document.body.classList.toggle('sidebar-active');
+	}
+});

@@ -1,0 +1,35 @@
+.filter__container {
+	position: fixed;
+	left: 50%;
+	top: 2.8rem;
+	transform: translateX(calc(-50%));
+	background: linear-gradient(270deg, #c4c4c4 -22.22%, #fafafb 132.7%);
+	z-index: 3;
+	padding: 5px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-radius: 100px;
+	transition: all 0.3s;
+	@media only screen and (max-width: $tab-port) {
+		top: 2rem;
+		transform: translateX(0);
+		width: 85%;
+		left: inherit;
+		right: 0;
+		border-radius: 4px;
+	}
+
+	.btn__secondary {
+		border-radius: 100px;
+		@media only screen and (max-width: $tab-port) {
+			border-radius: 4px;
+			padding: 0.8rem 1.2rem;
+		}
+		&:not(.active) {
+			padding: 1rem 1rem;
+			background: none;
+			color: $color-text-light;
+		}
+	}
+}

@@ -1,0 +1,86 @@
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	list-style: none;
+	text-decoration: none;
+	outline: none;
+}
+::selection {
+	background: $color-text;
+	color: #fff;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+
+	@media only screen and (max-width: $laptop-port) {
+		font-size: 55%;
+	}
+	@media only screen and (max-width: $tab-port) {
+		font-size: 50%;
+	}
+}
+
+body {
+	// --sidebar-width: 30rem;
+	font-family: $font-primary;
+	font-size: 1.6rem;
+	color: $color-text;
+	line-height: 1.6;
+
+	&.sidebar-active {
+		--sidebar-width: 30rem;
+	}
+	@media only screen and (max-width: $laptop-port) {
+		--sidebar-width: 0;
+
+		&.sidebar-active {
+			--sidebar-width: 30rem;
+		}
+	}
+}
+
+main.content {
+	margin-left: var(--sidebar-width);
+	padding: 2.5rem;
+	padding-top: 10rem;
+	position: relative;
+	transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+	@media only screen and (max-width: $laptop-port) {
+		margin-left: 0;
+	}
+	@media only screen and (max-width: $mbl-land) {
+		padding: 0;
+		padding-top: 10rem;
+	}
+
+	.page__header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-bottom: 1rem;
+
+		.dot__menu {
+			width: 3rem;
+			height: 3rem;
+			border-radius: 50%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background: $color-bg;
+		}
+
+		&--right {
+			display: flex;
+			align-items: center;
+			button:not(:last-child) {
+				margin-right: 1rem;
+			}
+		}
+	}
+}

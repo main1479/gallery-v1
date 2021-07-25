@@ -1,0 +1,105 @@
+.year__card {
+	margin-bottom: 3rem;
+	border-radius: 1.6rem;
+	position: relative;
+	box-shadow: -7px 22px 31px -11px rgba(127, 127, 131, 0.57);
+	overflow: hidden;
+	background: linear-gradient(180deg, #7f7f83 0%, #efeff9 28.41%);
+	cursor: pointer;
+	border: none;
+	min-height: 36rem;
+
+	img {
+		width: 100%;
+	}
+	.caption {
+		position: absolute;
+		font-size: 2.8rem;
+		font-weight: bold;
+		color: #fff;
+		top: 1.6rem;
+		left: 2.8rem;
+		z-index: 2;
+	}
+
+	// &::after {
+	// 	content: '';
+	// 	position: absolute;
+	// 	top: 0;
+	// 	left: 0;
+	// 	width: 100%;
+	// 	height: 100%;
+	// 	background: linear-gradient(
+	// 		180deg,
+	// 		rgba(127, 127, 131, 0.781) 0%,
+	// 		rgba(239, 239, 249, 0.09) 28.41%
+	// 	);
+	// 	z-index: 1;
+	// }
+}
+
+// =====================================================
+//  Suggestion card
+// =====================================================
+
+.suggestion__card {
+	margin-top: 1rem;
+	padding: 3.5rem 2rem;
+	text-align: center;
+	background: $color-bg;
+	border-radius: 1rem;
+	position: relative;
+
+	.btn__close {
+		position: absolute;
+		top: 0.9rem;
+		right: 1.2rem;
+		color: $color-secondary;
+		padding: 0;
+		margin: 0;
+		line-height: 1;
+		&:focus {
+			box-shadow: none;
+		}
+		svg {
+			width: 1.2rem;
+			height: 1.2rem;
+			fill: currentColor;
+			padding: 0;
+			margin: 0;
+		}
+
+		&:hover {
+			color: $color-text-light;
+		}
+	}
+}
+
+// =================================================
+// Library card ====================================
+// =================================================
+.video__card {
+	min-height: 19rem;
+	background: $color-secondary;
+	border: 0;
+	border-radius: 0;
+	position: relative;
+	cursor: pointer;
+
+	&.video__card--hr {
+		min-height: 22rem;
+	}
+	&.video__card--vh {
+		min-height: 40rem;
+		max-width: calc(100% - 10rem);
+		margin-left: 5rem;
+	}
+
+	.duration {
+		position: absolute;
+		bottom: 5px;
+		right: 7px;
+		font-size: 1.3rem;
+		color: #fff;
+	}
+}
